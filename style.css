@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  body{ 
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    min-height: 100vh;
+    background-image: url('background_image.jpg');
+    height: 100%;
+/* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+        
+  }
+
+
+/*Alarm Clock style*/
+.alarm{
+   
+    background: #42033d;
+    box-shadow: 10px 50px 70px rgba(152, 69, 163, 0.25),
+    
+}
+
+.datetime{
+    color: #fff;
+    background: #05383f;
+    font-family: "Segoe UI", sans-serif;
+    width: 400px;
+    padding: 15px 20px;
+    transition: 0.5s;
+    transition-property: all;
+    cursor: pointer;
+    text-align: center;
+    
+}
+
+.datetime:hover{
+    background: rgba(0,0,0,0.7);
+    box-shadow: 10px 50px 70px rgba(0,0,0,0.25),
+    
+}
+
+.date{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.time{
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time span:not(:last-child){
+    position: relative;
+    max-width: 0 6px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.time span:last-child{
+    background: #10101E;
+    font-size: 60px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 10px;
+    padding: 0 5px;
+    border-radius: 3px;
+}
+
+
+hr{
+    
+    border: 1px dotted lightcyan;
+    margin: 20px auto;
+}
+.setAlarm-container{
+  text-align: center;
+}
+.setAlarm{
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+}
+.setAlarm .column{
+  margin-right: 4px;
+}
+.column select{
+    background: #607D8B;
+    color: #fff;
+    text-align: center;
+    padding: 8px 4px;
+    border: 2px solid rgba(0,0,0,0.25);
+    border-radius: 18px;
+   
+}
+
+.setAlarm-container #btn-setAlarm{
+  margin: 8px 0 0 0;
+  background: #145370;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #141517, #4CAF50);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #141517, #4CAF50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+#btn-setAlarm, .btn-delete, #stopAlarm{
+  padding: 8px 35px;
+    color: #fff;
+    background: #F44336;
+    background: linear-gradient(to right, #141517, #F44336);
+    border: none;
+    border-radius: 18px;
+    box-shadow: 10px 50px 70px rgba(0,0,0,0.25),
+    inset 5px 5px 10px rgba(0,0,0,0.5),
+    inset 5px 5px 20px rgba(255,255,255,0.2),
+    inset -5px -5px 15px rgba(0,0,0,0.75);
+    cursor: pointer;
+    transition: all ease .5s;
+}
+
+#stopAlarm{
+    visibility: hidden;
+    background: #F44336;
+    margin-top: 25px;
+    animation: changecolorbtn 7s infinite;
+
+}
+
+.btn-delete{
+    margin-left: 50px;
+}
+#btn-setAlarm:hover,.btn-delete:hover, #stopAlarm:hover{
+    box-shadow: 10px 50px 70px rgba(0,0,0,0.25),
+    inset 5px 5px 10px rgb(108 70 106 / 50%),
+    inset 5px 5px 20px rgba(255,255,255,0.2),
+    inset -5px -5px 15px rgb(108 70 106 / 75%);
+}
+
+h3{
+    color: #fff;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.alarmList{
+    color: #fff;
+    margin: 14px auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.alarmLog{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6px auto;
+}
+
+
+
+  & > div {
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    background: white;
+  }
+ 
+  header {
+    font-weight: bold;
+  }
+  h1 {
+    font-size: 150%;
+    margin: 0 0 15px;
+  }
+
+.hidden{
+  visibility: hidden;
+  opacity: 0;
+}
+
+
+
+small {
+  color: lightgray;
+}
+
+.btn {
+  background-color: white;
+  padding: 1em 1.5em;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  i {
+    padding-right: 0.3em;
+  }
+}
+
+/* digital clock style */
+
+#ytime {
+  /* margin-bottom: -80px; */
+  display: flex;
+  transform: translateY(15px);
+  padding: 10px 10px;
+  font-size: 2em;
+  font-weight: 600;
+  border: 2px solid rgba(0,0,0,0.5);
+  border-radius: 40px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5),
+  inset 5px 5px 20px rgba(255,255,255,0.2),
+  inset -5px -5px 15px rgba(0,0,0,0.75);
+  margin-left: 15px;
+}
+
+#ytime div {
+  position: relative;
+  width: 60px;
+  text-align: center;
+  font-weight: 500;
+  color: var(--clr);
+}
+
+#ytime div:nth-child(1)::after,
+#ytime div:nth-child(2)::after {
+  content: ':';
+  position: absolute;
+  right: -4px;
+}
+
+#ytime div:last-child {
+  font-size: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+#ytime div:nth-child(2)::after {
+  animation: animate 1s steps(1) infinite;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.music {
+  width: 400px;
+  height: 200px;
+  /* display: inline-flex; */
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: -25px;
+  left: 16rem;
+  display: none;
+}
+.music.alarmrun{
+  display: inline-flex;
+}
+
+.music .bar {
+  width: 12px;
+  border-radius: 10px;
+  background: #FFF;
+  animation: loader 1.5s ease-in-out infinite;
+}
+
+@keyframes loader {
+
+  0%,
+  100% {
+      height: 2px;
+  }
+
+  50% {
+      height: 80px;
+  }
+}
+
+.music .bar:nth-child(1) {
+  background: #0300a0;
+  animation-delay: 1s;
+}
+
+.music .bar:nth-child(2) {
+  background: #4e00df;
+  animation-delay: 0.8s;
+}
+
+.music .bar:nth-child(3) {
+  background: #1827ff;
+  animation-delay: 0.6s;
+}
+
+.music .bar:nth-child(4) {
+  background: #495bff;
+  animation-delay: 0.4s;
+}
+
+.music .bar:nth-child(5) {
+  background: #00ffdd;
+  animation-delay: 0.2s;
+}
+
+.music .bar:nth-child(6) {
+  background: #00ffdd;
+  animation-delay: 0.2s;
+}
+
+.music .bar:nth-child(7) {
+  background: #495bff;
+  animation-delay: 0.4s;
+}
+
+.music .bar:nth-child(8) {
+  background: #1827ff;
+  animation-delay: 0.6s;
+}
+
+.music .bar:nth-child(9) {
+  background: #1827ff;
+  animation-delay: 0.8s;
+}
+
+.music .bar:nth-child(10) {
+  background: #0300a0;
+  animation-delay: 1s;
+}
